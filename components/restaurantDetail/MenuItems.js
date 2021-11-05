@@ -30,8 +30,7 @@ export default function MenuItems({
   foods,
   hideCheckbox,
   marginLeft,
-}) 
-{
+}) {
   const dispatch = useDispatch();
 
   const selectItem = (item, checkboxValue) =>
@@ -88,7 +87,7 @@ const FoodInfo = (props) => (
 const FoodImage = ({ marginLeft, ...props }) => (
   <View>
     <Image
-      source= { props.food.image ? {uri: props.food.image} : null }
+      source={props.food.image ? { uri: props.food.image } : null}
       style={{
         width: 100,
         height: 100,

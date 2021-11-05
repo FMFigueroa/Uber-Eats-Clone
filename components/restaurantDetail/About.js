@@ -12,7 +12,7 @@ export default function About(props) {
   } • 💵 • ${rating} ⭐ (${reviews}+)`;
 
   return (
-    <View>
+    <View style={{marginBottom:10}}>
       <RestaurantImage image={image} />
       <RestaurantName name={name} />
       <RestaurantDescription description={description} />

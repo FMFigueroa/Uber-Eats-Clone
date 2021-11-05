@@ -19,11 +19,11 @@ export default function BottomTabs() {
         <Icon icon="shopping-bag" text="Grocery" />
         <Icon icon="receipt" text="Orders" />
         <Icon icon="user" text="Account" />
-        <Icon icon="users" text="Account" />
-        <Icon icon="facebook" text="Account" />
-        <Icon icon="youtube" text="Account" />
-        <Icon icon="instagram" text="Account" />
-        <Icon icon="bitcoin" text="Account" />
+        <Icon icon="users" text="Group" />
+        <Icon icon="facebook" text="Facebook" />
+        <Icon icon="youtube" text="YouTube" />
+        <Icon icon="instagram" text="Instagram" />
+        <Icon icon="bitcoin" text="Bitcoin" />
       </View>
     </ScrollView>
   );

@@ -1,22 +1,29 @@
-import React, { useState, useEffect, } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import { useSelector } from "react-redux";
 import LottieView from "lottie-react-native";
-import MenuItems from "../components/restaurantDetail/MenuItems";
 import firebase from "../firebase";
+import MenuItems from "../components/restaurantDetail/MenuItems";
 
 export default function OrderCompleted() {
-  const [lastOrder, setLastOrder] = useState(
-    {items: [
+  const [lastOrder, setLastOrder] = useState({
+    items: [
       {
-        title: "Bologna",
-        description: "With butter lettuce, tomato and bechamell ",
+        title: "Pizza 4 Quesos",
+        description: "Tomato souce with Mozarella Cheese",
         price: "$ 14.99",
         image:
-          "https://www.modernhoney.com/wp-content/uploads/2019/08/Classic-Lasagna-14-scaled.jpg",
+          "https://media.istockphoto.com/photos/cheesy-pepperoni-pizza-picture-id938742222?b=1&k=20&m=938742222&s=170667a&w=0&h=HyfY78AeiQM8vZbIea-iiGmNxHHuHD-PVVuHRvrCIj4=",
+      },
+      {
+        title: "Tacos Mexicanos ",
+        description: "Carne Asada en Creeps de Maiz",
+        price: "$ 19.99",
+        image:
+          "https://media.istockphoto.com/photos/three-carne-asada-mexican-street-tacos-in-corn-tortilla-with-lime-picture-id1272532813?b=1&k=20&m=1272532813&s=170667a&w=0&h=0yhpzpLRoBmTq1lxWqpk4_M3vbVhGyYD3zw-cSGVfBw=",
       },
     ],
-  }); 
+  });
 
   const { items, restaurantName } = useSelector(
     (state) => state.cartReducer.selectedItems
@@ -51,7 +58,7 @@ export default function OrderCompleted() {
         });
       });
 
-    return () => unsubscribe();
+    return () => (unsubscribe())
   }, []);
 
   return (
@@ -75,7 +82,7 @@ export default function OrderCompleted() {
           Your order at {restaurantName} has been placed for {"$"}
           {totalUSD}
         </Text>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <MenuItems
             foods={lastOrder.items}
             hideCheckbox={true}
@@ -96,7 +103,9 @@ export default function OrderCompleted() {
             style={{
               height: 200,
               alignSelf: "center",
-              justifyContent: "flex-end",
+              justifyContent: 'center',
+              marginTop:50,
+              marginBottom:100,
             }}
             source={require("../assets/animations/cooking.json")}
             autoPlay

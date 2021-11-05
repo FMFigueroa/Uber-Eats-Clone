@@ -45,7 +45,7 @@ export default function Home({navigation}) {
   }, [city, activeTab]);
 
   return (
-    <SafeAreaView style={{ backgroundColor: "#eee", flex: 1 }}>
+    <SafeAreaView style={{ backgroundColor: "#eeee", flex: 1 }}>
       <View style={{ backgroundColor: "#80c", padding: 10 }}>
         <HeaderTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <SearchBar cityHandler={setCity} />
